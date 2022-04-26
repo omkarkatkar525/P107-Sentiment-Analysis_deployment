@@ -9,7 +9,7 @@ Original file is located at
 
 
 !pip install flask
-from Flask import Flask,render_template,url_for,request
+from flask import Flask,render_template,url_for,request
 import pandas as pd 
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
