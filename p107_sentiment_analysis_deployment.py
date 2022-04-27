@@ -17,7 +17,7 @@ from PIL import Image
 
 
 clf = pickle.load(open('nlp_model.pkl', 'rb'))
-cv=pickle.load(open('tranformers.pkl','rb'))
+cv=pickle.load(open('transfomers.pkl','rb'))
 
 pickle_in = open("/content/dt_model.py","rb")
 classifier=pickle.load(pickle_in)
