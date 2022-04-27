@@ -33,7 +33,7 @@ def predict_note_authentication(message):
     #print(my_prediction)
     return render_template('result.html',prediction = my_prediction)
 
-@app.route('/main',button=['POST'])
+@app.route('/main',methods=['Predict'])
 def main():
  st.title("Sentiment analysis")
  html_temp = """
