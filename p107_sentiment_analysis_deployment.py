@@ -33,7 +33,7 @@ def predict_note_authentication(message):
     #print(my_prediction)
     return render_template('result.html',prediction = my_prediction)
 
-@app.route('/main',methods=['Predict'])
+@app.route('/main',methods=['POST'])
 def main():
  st.title("Sentiment analysis")
  html_temp = """
@@ -46,7 +46,8 @@ def main():
  result=""
  
  if request.method == 'POST':
-     result=predict_note_authentication(message)
+    message = request.form['message']
+    result=predict_note_authentication(message)
  st.success('The output is {}'.format(result))
  if st.button("About"):
      st.text("Built By Omkar Katkar")
