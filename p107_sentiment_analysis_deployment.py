@@ -44,7 +44,8 @@ def main():
  st.markdown(html_temp,unsafe_allow_html=True)
  message = st.text_input("index","Type Here")
  result=""
- if st.button("Predict"):
+ 
+ if request.method == 'POST':
      result=predict_note_authentication(message)
  st.success('The output is {}'.format(result))
  if st.button("About"):
