@@ -1,1 +1,1 @@
-web: gunicorn P107-Sentiment Analysis_deploymen:app
+web: gunicorn app:app
