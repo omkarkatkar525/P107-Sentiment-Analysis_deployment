@@ -46,12 +46,12 @@ def main():
     if st.button("Predict"):
         result=sentiment_analysis(message)
     if result==2:
-     p='positive Review'
+     Pos='positive Review'
     elif result==1:
      Neu='Neutral Review'
     elif result==0:
      Neg='Negative Review'
-    st.success('The output is {}'.format(result))
+    st.success(Pos,Neu,Neg)
     if st.button("About"):
         st.text("Built By Omkar Katkar")
         st.text("Built with Streamlit")
