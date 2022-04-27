@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1d7yzQzM7r4-WCXBIwNn754s7JsSJ6DzV
 """
 
-from flask import Flask,render_template,url_for,request
+import Flask
 import pandas as pd 
 import pickle
 from pickle import load
