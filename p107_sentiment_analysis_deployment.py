@@ -21,7 +21,7 @@ import joblib
 
 clf=pickle.load(open("nlp_model.pkl",'rb'))
 cv=pickle.load(open("transfomers.pkl",'rb'))
-
+app = Flask(__name__)
 
 def welcome():
     return "Welcome All"
