@@ -35,20 +35,20 @@ def predict_note_authentication(message):
 
 def main():
  st.title("Sentiment analysis")
-    html_temp = """
-    <div style="background-color:indigo;padding:10px">
-    <h2 style="color:LightSalmon;text-align:center;">Streamlit Incident Impact Prediction ML App </h2>
-    </div>
-    """
-    st.markdown(html_temp,unsafe_allow_html=True)
-    message = st.text_input("index","Type Here")
-    result=""
-    if st.button("Predict"):
-        result=predict_note_authentication(message)
-    st.success('The output is {}'.format(result))
-    if st.button("About"):
-        st.text("Built By Omkar Katkar")
-        st.text("Built with Streamlit")
+ html_temp = """
+ <div style="background-color:indigo;padding:10px">
+ <h2 style="color:LightSalmon;text-align:center;">Streamlit Incident Impact Prediction ML App </h2>
+ </div>
+ """
+ st.markdown(html_temp,unsafe_allow_html=True)
+ message = st.text_input("index","Type Here")
+ result=""
+ if st.button("Predict"):
+     result=predict_note_authentication(message)
+ st.success('The output is {}'.format(result))
+ if st.button("About"):
+     st.text("Built By Omkar Katkar")
+     st.text("Built with Streamlit")
 
 if __name__=='__main__':
     main()
