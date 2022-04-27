@@ -12,6 +12,7 @@ import pandas as pd
 import pickle
 from pickle import load
 import streamlit as st 
+from markupsafe import escape
 
 from PIL import Image
 from sklearn.feature_extraction.text import CountVectorizer
