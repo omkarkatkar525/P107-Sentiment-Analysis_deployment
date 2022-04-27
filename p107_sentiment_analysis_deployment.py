@@ -12,17 +12,23 @@ Original file is located at
 from flask import Flask,render_template,url_for,request
 import pandas as pd 
 import pickle
+from pickle import load
+import streamlit as st 
+
+from PIL import Image
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 #from sklearn.externals import joblib
 import joblib
-import pickle
 
 # load the model from disk
 filename = 'nlp_model.pkl'
 clf = pickle.load(open(filename, 'rb'))
-cv=pickle.load(open('tranform.pkl','rb'))
+cv=pickle.load(open('transfomers.pkl','rb'))
 app = Flask(__name__)
+
+def welcome():
+    return "Welcome All"
 
 @app.route('/')
 def home():
