@@ -7,52 +7,52 @@ Original file is located at
     https://colab.research.google.com/drive/1d7yzQzM7r4-WCXBIwNn754s7JsSJ6DzV
 """
 
-from flask import Flask
-import pandas as pd 
+import numpy as np
 import pickle
-from pickle import load
+import pandas as pd
+
 import streamlit as st 
-from markupsafe import escape
 
 from PIL import Image
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
-#from sklearn.externals import joblib
-import joblib
 
-clf=pickle.load(open("nlp_model.pkl",'rb'))
-cv=pickle.load(open("transfomers.pkl",'rb'))
-app = Flask(__name__)
+
+clf = pickle.load(open('nlp_model.pkl', 'rb'))
+cv=pickle.load(open('tranformers.pkl','rb'))
+
+pickle_in = open("/content/dt_model.py","rb")
+classifier=pickle.load(pickle_in)
+
 
 def welcome():
     return "Welcome All"
 
-def predict_note_authentication(message):
-    data = [message]
-    vect = cv.transform(data).toarray()
-    my_prediction = clf.predict(vect)
-    #print(my_prediction)
-    return render_template('result.html',prediction = my_prediction)
 
-@app.route('/main',methods=['POST'])
+def sentiment_analysis(message):
+    vect = cv.transform(message).toarray()
+    my_prediction = clf.predict(vect)
+    
+    print(my_prediction)
+    return my_prediction
+
+
 def main():
- st.title("Sentiment analysis")
- html_temp = """
- <div style="background-color:indigo;padding:10px">
- <h2 style="color:LightSalmon;text-align:center;">Streamlit Incident Impact Prediction ML App </h2>
- </div>
- """
- st.markdown(html_temp,unsafe_allow_html=True)
- message = st.text_input("index","Type Here")
- result=""
- 
- if request.method == 'POST':
-    message = request.form['message']
-    result=predict_note_authentication(message)
- st.success('The output is {}'.format(result))
- if st.button("About"):
-     st.text("Built By Omkar Katkar")
-     st.text("Built with Streamlit")
+    st.title("Sentiment Analysis")
+    html_temp = """
+    <div style="background-color:tomato;padding:10px">
+    <h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
+    </div>
+    """
+    st.markdown(html_temp,unsafe_allow_html=True)
+    message = st.text_input("Review","Type Here")
+  
+    result=""
+    if st.button("Predict"):
+        result=sentiment_analysis(message)
+    st.success('The output is {}'.format(result))
+    if st.button("About"):
+        st.text("Built By Omkar Katkar")
+        st.text("Built with Streamlit")
 
 if __name__=='__main__':
-    app.run(debug=True)
+    main()
+    
