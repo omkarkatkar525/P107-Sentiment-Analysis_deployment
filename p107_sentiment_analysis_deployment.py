@@ -45,12 +45,13 @@ def main():
     result=""
     if st.button("Predict"):
         result=sentiment_analysis(message)
-    st.success(if result=2:
-               return print(positive Review)
-               elif result=1:
-               return print(Neutral Review)
-               elif result=0:
-               return print(Negative Review))
+    if result==2:
+    p='positive Review'
+    elif result==1:
+    Neu='Neutral Review'
+    elif result==0:
+    Neg='Negative Review'
+    st.success('The output is {}'.format(result))
     if st.button("About"):
         st.text("Built By Omkar Katkar")
         st.text("Built with Streamlit")
