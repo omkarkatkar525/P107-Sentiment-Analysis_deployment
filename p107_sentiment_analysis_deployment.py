@@ -27,9 +27,6 @@ clf = pickle.load(open(filename, 'rb'))
 cv=pickle.load(open('transfomers.pkl','rb'))
 app = Flask(__name__)
 
-def welcome():
-    return "Welcome All"
-
 @app.route('/')
 def home():
 	return render_template('home.html')
