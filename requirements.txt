@@ -4,4 +4,6 @@ streamlit==0.72.0
 joblib==0.17.0
 scikit_learn==0.24.0
 click==8.0
-
+nltk
+stopwords
+PorterStemmer
