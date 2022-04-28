@@ -46,7 +46,7 @@ def main():
     if st.button("Predict"):
         result=sentiment_analysis(message)
    
-    st.success(Result)
+    st.success(result)
     if st.button("About"):
         st.text("Built By Omkar Katkar")
         st.text("Built with Streamlit")
