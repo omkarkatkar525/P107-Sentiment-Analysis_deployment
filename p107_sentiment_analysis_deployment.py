@@ -27,9 +27,14 @@ def sentiment_analysis(message):
     data=[message]
     vect = cv.transform(data).toarray()
     my_prediction = clf.predict(vect)
-    
-    print(my_prediction)
-    return my_prediction
+    if my_prediction==2:
+     prediction='positive Review'
+    elif my_prediction==1:
+     prediction='Neutral Review'
+    elif my_prediction==0:
+     prediction='Negative Review'
+    print(prediction)
+    return prediction
 
 
 def main():
