@@ -10,6 +10,9 @@ Original file is located at
 import numpy as np
 import pickle
 import pandas as pd
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 
 import streamlit as st 
 
