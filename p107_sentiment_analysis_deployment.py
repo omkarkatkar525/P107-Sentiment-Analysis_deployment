@@ -19,22 +19,17 @@ import streamlit as st
 from PIL import Image
 
 
-random = pickle.load(open('nlp_model.pkl', 'rb'))
+clf = pickle.load(open('nlp_model.pkl', 'rb'))
 cv=pickle.load(open('transfomers.pkl','rb'))
 
 def welcome():
     return "Welcome All"
 
-def trails(model):
-  model.fit(X_train,y_train)
-  y_pred_test=model.predict(X_test)
- 
-classifier_14=Pipeline([('vect', cv),('chi',  SelectKBest(chi2, k=1200)),('clf', RandomForestClassifier(criterion='entropy',max_depth= 70)),])
 
 def sentiment_analysis(message):
     data=[message]
     vect = cv.transform(data).toarray()
-    my_prediction = random.predict(vect)
+    my_prediction = clf.predict(vect)
     if my_prediction==2:
      prediction='Positive Review'
     elif my_prediction==1:
@@ -66,4 +61,3 @@ def main():
 
 if __name__=='__main__':
     main()
-    
