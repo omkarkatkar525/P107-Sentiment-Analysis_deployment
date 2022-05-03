@@ -55,8 +55,8 @@ def main():
         result=sentiment_analysis(message)
    
     st.success(result)
-    pred_test=clf.predict_proba(vect)
-    st.text(pred_test[:1,1:2])
+        pred_test=clf.predict_proba(vect)
+        st.text(pred_test[:1,1:2])
     
     if st.button("About"):
         st.text("Built By Omkar Katkar")
