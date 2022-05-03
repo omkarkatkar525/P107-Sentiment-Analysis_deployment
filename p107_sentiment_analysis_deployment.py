@@ -39,7 +39,9 @@ def sentiment_analysis(message):
     print(prediction)
     return prediction
 
-def probability(vect): 
+def probability(message):
+    data=[message]
+    vect = cv.transform(data).toarray()
     pred_test=clf.predict_proba(vect)
     print(pred_test[:1,1:2])
     return pred_test
