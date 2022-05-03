@@ -41,8 +41,8 @@ def sentiment_analysis(message):
 
 def probability(message):
     data=[message]
-    vect = cv.transform(data).toarray()
-    pred_test=clf.predict_proba(vect)
+    
+    pred_test=clf.predict_proba(data)
     print('Positive Review',pred_test[:1,0:1])
     print('Neutral Review',pred_test[:1,1:2])
     print('Negative Review',pred_test[:1,2:3])
