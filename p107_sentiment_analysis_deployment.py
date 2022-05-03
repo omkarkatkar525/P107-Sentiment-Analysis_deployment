@@ -60,13 +60,13 @@ def main():
     if st.button("Predict"):
         result=sentiment_analysis(message)
     
+    st.success(result)
+    
     probability=""
     if st.button("Probability"):
-       probability=probability(message)
+       probability=probability(message)   
+     st.success(probability)
         
-    st.success(result)
-        
-    
     if st.button("About"):
         st.text("Built By Omkar Katkar")
         st.text("Built with Streamlit")
