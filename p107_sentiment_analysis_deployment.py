@@ -64,10 +64,7 @@ def main():
     
     st.success(result)
     
-    probability=""
-    if st.button("Probability"):
-       probability=probability(message)   
-     st.success(probability)
+    
         
     if st.button("About"):
         st.text("Built By Omkar Katkar")
