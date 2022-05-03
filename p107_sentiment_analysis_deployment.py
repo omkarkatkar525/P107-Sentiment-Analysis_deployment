@@ -43,8 +43,8 @@ def sentiment_analysis(message):
 def main():
     st.title("Sentiment Analysis")
     html_temp = """
-    <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
+    <div style="background-color:orange;padding:10px">
+    <h2 style="color:white;text-align:center;">Streamlit Sentiment Analysis ML App </h2>
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
@@ -55,6 +55,9 @@ def main():
         result=sentiment_analysis(message)
    
     st.success(result)
+    pred_test=clf.predict_proba(vect)
+    st.text(pred_test[:1,1:2])
+    
     if st.button("About"):
         st.text("Built By Omkar Katkar")
         st.text("Built with Streamlit")
