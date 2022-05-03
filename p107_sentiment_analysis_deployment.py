@@ -39,6 +39,10 @@ def sentiment_analysis(message):
     print(prediction)
     return prediction
 
+def probability(vect) 
+    pred_test=clf.predict_proba(vect)
+    print(pred_test[:1,1:2])
+    return pred_test
 
 def main():
     st.title("Sentiment Analysis")
@@ -53,8 +57,10 @@ def main():
     result=""
     if st.button("Predict"):
         result=sentiment_analysis(message)
-        pred_test=clf.predict_proba(vect)
-        st.text(pred_test[:1,1:2])
+    
+    probability=""
+    if st.button("Probability"):
+        probability(vect)
         
     st.success(result)
         
