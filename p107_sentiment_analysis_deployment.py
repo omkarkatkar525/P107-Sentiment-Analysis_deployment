@@ -62,7 +62,7 @@ def main():
     
     probability=""
     if st.button("Probability"):
-        probability(vect)
+       probability=probability(message)
         
     st.success(result)
         
