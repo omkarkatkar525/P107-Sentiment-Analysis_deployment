@@ -45,8 +45,7 @@ def probability(message):
     pred_test = clf.predict_proba(vect_1)
     
     a=print('Positive Review',pred_test[:1,0:1])
-    b=print('Neutral Review',pred_test[:1,1:2])
-    c=print('Negative Review',pred_test[:1,2:3])
+   
     pred_test=print(a)
     return pred_test
 
