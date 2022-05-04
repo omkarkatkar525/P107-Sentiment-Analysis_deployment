@@ -36,7 +36,11 @@ def sentiment_analysis(message):
      prediction='Neutral Review'
     elif my_prediction==0:
      prediction='Negative Review'
-    print(prediction)
+    pred_test = clf.predict_proba(vect)
+    a=("Positive Review",pred_test[:1,0:1]) 
+    b=("Neutral Review",pred_test[:1,1:2])
+    c=("Negat
+    print(prediction,a,b,c)
     return prediction
 
 def probability(message):
