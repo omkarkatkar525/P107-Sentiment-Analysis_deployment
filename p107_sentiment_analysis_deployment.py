@@ -20,7 +20,7 @@ import streamlit as st
 from PIL import Image
 
 
-clf = pickle.load(open('nlp_model.pkl', 'rb'))
+clf = pickle.load(open('nlp_random_model.pkl', 'rb'))
 cv=pickle.load(open('transfomers.pkl','rb'))
 
 def welcome():
