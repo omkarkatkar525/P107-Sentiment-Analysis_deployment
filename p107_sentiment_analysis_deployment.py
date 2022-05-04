@@ -65,7 +65,6 @@ def main():
     if st.button("Predict"):
         result=sentiment_analysis(message)
         st.success(result)
-    if st.button("Probability"):
         prob=probability(message) 
         st.success(prob)
       
