@@ -39,9 +39,9 @@ def sentiment_analysis(message):
     print(prediction)
     return prediction
 
-def probability(mes):
-    data_1=[mes]
-    vect_1= cv.transform(data).toarray()
+def probability(message):
+    data_1=[message]
+    vect_1= cv.transform(data_1).toarray()
     pred_test = clf.predict_proba(vect_1)
     
     a=print('Positive Review',pred_test[:1,0:1])
@@ -59,7 +59,7 @@ def main():
     """
     st.markdown(html_temp,unsafe_allow_html=True)
     message = st.text_input("Review","Type Here")
-    mes = st.text_input("Review","Type Here")
+   
   
     result=""
     probability=""
@@ -68,7 +68,7 @@ def main():
         result=sentiment_analysis(message)
         st.success(result)
     if st.button("Probability"):
-        prob=probability(mes) 
+        prob=probability(message) 
         st.success(prob)
              
      
