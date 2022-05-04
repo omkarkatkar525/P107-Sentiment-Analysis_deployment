@@ -46,7 +46,7 @@ def probability(message):
     a=print("Positive Review",pred_test[:1,0:1]) 
     b=print("Neutral Review",pred_test[:1,1:2])
     c=print("Negative Review",pred_test[:1,2:3])
-    print(a,b,c)
+    print(a)
     return pred_test
 
 def main():
