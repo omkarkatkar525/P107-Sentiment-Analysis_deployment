@@ -9,7 +9,7 @@ Original file is located at
 
 import numpy as np
 import pickle
-import pickle
+
 import pandas as pd
 import nltk
 from nltk.corpus import stopwords
@@ -37,7 +37,7 @@ def sentiment_analysis(message):
      prediction='Neutral Review'
     elif my_prediction==0:
      prediction='Negative Review'
-    a
+    
   
     return prediction
 
