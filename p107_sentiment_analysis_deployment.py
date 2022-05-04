@@ -72,7 +72,7 @@ def main():
       
     if st.button("About"):
         st.text("Built By Omkar Katkar")
-        st.text("Built with Streamlit")
+        
 
 if __name__=='__main__':
     main()
