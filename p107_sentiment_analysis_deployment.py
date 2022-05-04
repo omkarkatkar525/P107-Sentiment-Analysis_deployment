@@ -39,8 +39,8 @@ def sentiment_analysis(message):
     print(prediction)
     return prediction
 
-def probability(message):
-    data=[message]
+def probability(text):
+    data=[text]
     vect = cv.transform(data).toarray()
     pred_test = clf.predict_proba(vect)
     
@@ -59,6 +59,7 @@ def main():
     """
     st.markdown(html_temp,unsafe_allow_html=True)
     message = st.text_input("Review","Type Here")
+    text = st.text_input("Review","Type Here")
   
     result=""
     probability=""
@@ -67,7 +68,7 @@ def main():
         result=sentiment_analysis(message)
         st.success(result)
     if st.button("Probability"):
-        prob=probability(message) 
+        prob=probability(text) 
         st.success(prob)
              
      
