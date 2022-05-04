@@ -46,8 +46,10 @@ def probability(message):
     a=pred_test[:1,0:1]
     b=pred_test[:1,1:2]
     c=pred_test[:1,2:3]
-    d=st.write(f"Negative Review : {a}")
-    return d
+    d=st.write(f"Probability of Negative Review : {a}")
+    e=st.write(f"Probability of Neutral Review : {a}")
+    f=st.write(f"Probability of Positive Review : {a}")
+    return d,e,f
 
 
    
