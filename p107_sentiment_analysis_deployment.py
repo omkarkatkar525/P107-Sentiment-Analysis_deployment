@@ -49,11 +49,7 @@ def probability(message):
     d=st.write(f"Probability of Negative Review : {a}")
     e=st.write(f"Probability of Neutral Review : {b}")
     f=st.write(f"Probability of Positive Review : {c}")
-    return d,e,f
-
-
-   
-
+    
 def main():
     st.title("Sentiment Analysis")
     html_temp = """
