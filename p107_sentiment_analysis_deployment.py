@@ -43,11 +43,11 @@ def probability(message):
     data_1=[message]
     vect_1= cv.transform(data_1).toarray()
     pred_test = clf.predict_proba(vect_1)
-    a=print("Negative Review",pred_test[:1,0:1]) 
-    b=("Neutral Review",pred_test[:1,1:2])
-    c=("Positive Review",pred_test[:1,2:3])
-    print(a)
-    return a,b,c
+    a=pred_test[:1,0:1]
+    b=pred_test[:1,1:2]
+    c=pred_test[:1,2:3]
+   
+    return print(a)
 
 
    
