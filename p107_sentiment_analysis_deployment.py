@@ -36,8 +36,7 @@ def sentiment_analysis(message):
      prediction='Neutral Review'
     elif my_prediction==0:
      prediction='Negative Review'
-   
-    print(prediction)
+  
     return prediction
 
 def probability(message):
