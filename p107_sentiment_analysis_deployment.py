@@ -41,7 +41,7 @@ def sentiment_analysis(message):
     b=("Neutral Review",pred_test[:1,1:2])
     c=("Negative Review",pred_test[:1,2:3])
     print(prediction,a,b,c)
-    return prediction
+    return prediction,a,b,c
 
 
    
