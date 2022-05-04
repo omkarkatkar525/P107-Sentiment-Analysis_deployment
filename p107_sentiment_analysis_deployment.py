@@ -39,7 +39,7 @@ def sentiment_analysis(message):
     pred_test = clf.predict_proba(vect)
     a=("Positive Review",pred_test[:1,0:1]) 
     b=("Neutral Review",pred_test[:1,1:2])
-    c=("Negat
+    c=("Negative Review",pred_test[:1,2:3])
     print(prediction,a,b,c)
     return prediction
 
