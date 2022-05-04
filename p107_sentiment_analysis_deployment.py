@@ -47,8 +47,8 @@ def probability(message):
     b=pred_test[:1,1:2]
     c=pred_test[:1,2:3]
     d=st.write(f"Probability of Negative Review : {a}")
-    e=st.write(f"Probability of Neutral Review : {a}")
-    f=st.write(f"Probability of Positive Review : {a}")
+    e=st.write(f"Probability of Neutral Review : {b}")
+    f=st.write(f"Probability of Positive Review : {c}")
     return d,e,f
 
 
@@ -70,8 +70,7 @@ def main():
     if st.button("Predict"):
         result=sentiment_analysis(message)
         st.success(result)
-        prob=probability(message) 
-        st.success(prob)
+        
       
     if st.button("About"):
         st.text("Built By Omkar Katkar")
