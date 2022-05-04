@@ -36,12 +36,19 @@ def sentiment_analysis(message):
      prediction='Neutral Review'
     elif my_prediction==0:
      prediction='Negative Review'
-    pred_test = clf.predict_proba(vect)
+   
+    print(prediction)
+    return prediction
+
+def probability(message):
+    data_1=[message]
+    vect_1= cv.transform(data_1).toarray()
+    pred_test = clf.predict_proba(vect_1)
     a=("Positive Review",pred_test[:1,0:1]) 
     b=("Neutral Review",pred_test[:1,1:2])
     c=("Negative Review",pred_test[:1,2:3])
-    print(prediction,a,b,c)
-    return prediction,a,b,c
+    print(a)
+    return a
 
 
    
@@ -62,7 +69,8 @@ def main():
     if st.button("Predict"):
         result=sentiment_analysis(message)
         st.success(result)
-       
+        prob=probability(message) 
+        st.success(prob)
       
     if st.button("About"):
         st.text("Built By Omkar Katkar")
