@@ -43,10 +43,7 @@ def probability(message):
     data_1=[message]
     vect_1= cv.transform(data_1).toarray()
     pred_test = clf.predict_proba(vect_1)
-    
-    a=print('Positive Review',pred_test[:1,0:1])
-   
-    pred_test=print(a)
+    print(pred_test)
     return pred_test
 
 def main():
@@ -58,8 +55,7 @@ def main():
     """
     st.markdown(html_temp,unsafe_allow_html=True)
     message = st.text_input("Review","Type Here")
-   
-  
+    
     result=""
     probability=""
    
@@ -69,10 +65,7 @@ def main():
     if st.button("Probability"):
         prob=probability(message) 
         st.success(prob)
-             
-     
-    
-        
+      
     if st.button("About"):
         st.text("Built By Omkar Katkar")
         st.text("Built with Streamlit")
