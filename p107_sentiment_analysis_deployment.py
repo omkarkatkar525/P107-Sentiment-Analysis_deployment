@@ -68,7 +68,7 @@ def main():
         result=sentiment_analysis(message)
         st.success(result)
         prob=probability(message) 
-        st.success(prob)
+        
       
     if st.button("About"):
         st.text("Built By Omkar Katkar")
