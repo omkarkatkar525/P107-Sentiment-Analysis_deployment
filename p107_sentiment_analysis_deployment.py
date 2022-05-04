@@ -57,7 +57,7 @@ def main():
     message = st.text_input("Review","Type Here")
     
     result=""
-    probability=""
+    prob=""
    
     if st.button("Predict"):
         result=sentiment_analysis(message)
