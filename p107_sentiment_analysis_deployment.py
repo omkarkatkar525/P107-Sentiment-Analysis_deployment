@@ -64,9 +64,13 @@ def proba(message):
     d=st.write(f"Probability of Negative Review : {a}")
     e=st.write(f"Probability of Neutral Review : {b}")
     f=st.write(f"Probability of Positive Review : {c}")
-    
     g = {'Negative Review': [d], 'Neutral Review': [e],'Positive Review':[f]} 
-    return st.bar_chart(g)
+    fig, g = plt.subplots()
+    g.hist(arr, bins=20)
+
+    return st.pyplot(fig)
+   
+    
 
 def main():
     st.title("Sentiment Analysis")
