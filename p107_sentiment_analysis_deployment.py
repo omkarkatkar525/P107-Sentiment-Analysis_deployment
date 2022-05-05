@@ -64,7 +64,7 @@ def proba(message):
     d=st.write(f"Probability of Negative Review : {a}")
     e=st.write(f"Probability of Neutral Review : {b}")
     f=st.write(f"Probability of Positive Review : {c}")
-    g=[a,b,c]
+    g=(a,b,c)
     g=g.astype(str)
     return st.bar_chart(g)
 
