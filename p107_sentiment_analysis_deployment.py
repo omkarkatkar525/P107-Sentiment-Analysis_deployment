@@ -64,18 +64,11 @@ def proba(message):
     d={'Negative Review': [a]}
     e={'Neutral Review': [b]}
     f={'Positive Review':[c]}
-    d = pd.DataFrame(d)
-    e = pd.DataFrame(e)
-    f = pd.DataFrame(f)
-    
+       
     g = {'Negative Review': [a], 'Neutral Review': [b],'Positive Review':[c]} 
     df = pd.DataFrame(g)
-    hist_data = [d,e,f]
-    group_labels = ['Negative Review','Neutral Review','Positive Review']
-    fig = ff.create_distplot(hist_data, group_labels, bin_size=[10, 25])
-    st.bar_chart(df) 
-    return st.plotly_chart(fig, use_container_width=True)
-
+    
+    return st.bar_chart(df)
  
    
     
