@@ -9,3 +9,4 @@ stopwords
 PorterStemmer
 matplotlib
 plotly
+altair 
