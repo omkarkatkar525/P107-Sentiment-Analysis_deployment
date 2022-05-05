@@ -65,8 +65,8 @@ def proba(message):
     e=st.write(f"Probability of Neutral Review : {b}")
     f=st.write(f"Probability of Positive Review : {c}")
     g = {'Negative Review': [d], 'Neutral Review': [e],'Positive Review':[f]} 
-    fig, g = plt.subplots()
-    g.hist(arr, bins=20)
+    fig, ax = plt.subplots()
+    ax.hist(g, bins=20)
 
     return st.pyplot(fig)
    
