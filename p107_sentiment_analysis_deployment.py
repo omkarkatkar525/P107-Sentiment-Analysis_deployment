@@ -64,6 +64,9 @@ def proba(message):
     d={'Negative Review': [a]}
     e={'Neutral Review': [b]}
     f={'Positive Review':[c]}
+    d = pd.DataFrame(d)
+    e = pd.DataFrame(e)
+    f = pd.DataFrame(f)
     
     g = {'Negative Review': [a], 'Neutral Review': [b],'Positive Review':[c]} 
     df = pd.DataFrame(g)
