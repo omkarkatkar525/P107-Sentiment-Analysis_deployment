@@ -65,8 +65,8 @@ def proba(message):
     e=st.write(f"Probability of Neutral Review : {b}")
     f=st.write(f"Probability of Positive Review : {c}")
     g=(d,e,f)
-    chart_data = pd.DataFrame(g,columns=["Negative Review"])
-    return st.bar_chart(chart_data)
+    
+    return st.bar_chart(g)
 
 def main():
     st.title("Sentiment Analysis")
