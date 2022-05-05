@@ -54,6 +54,19 @@ def probability(message):
     f=st.write(f"Probability of Positive Review : {c}")
     return d,e,f
 
+def proba(message):
+    data_1=[message]
+    vect_1= cv.transform(data_1).toarray()
+    pred_test = clf.predict_proba(vect_1)
+    a=pred_test[:1,0:1]
+    b=pred_test[:1,1:2]
+    c=pred_test[:1,2:3]
+    d=st.write(f"Probability of Negative Review : {a}")
+    e=st.write(f"Probability of Neutral Review : {b}")
+    f=st.write(f"Probability of Positive Review : {c}")
+    chart_data = pd.DataFrame((a,b,c),columns=["Negative Review", "Neutral Review", "Positive Review"])
+    return st.bar_chart(chart_data)
+
 def main():
     st.title("Sentiment Analysis")
     html_temp = """
@@ -70,7 +83,8 @@ def main():
     if st.button("Predict"):
         result=sentiment_analysis(message)
         st.success(result)
-        prob=probability(message) 
+        prob=probability(message)
+        proba(message)     
         
       
     if st.button("About"):
