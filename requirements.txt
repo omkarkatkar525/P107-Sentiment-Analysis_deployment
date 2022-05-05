@@ -8,3 +8,4 @@ nltk
 stopwords
 PorterStemmer
 matplotlib
+plotly
