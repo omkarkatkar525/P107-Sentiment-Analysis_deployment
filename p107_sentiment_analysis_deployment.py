@@ -65,7 +65,7 @@ def proba(message):
     e=st.write(f"Probability of Neutral Review : {b}")
     f=st.write(f"Probability of Positive Review : {c}")
     g=[a,b,c]
-    chart_data = pd.DataFrame(g)
+    chart_data = pd.DataFrame(g,columns=["Negative Review", "Neutral Review", "Positive Review"])
     return st.bar_chart(chart_data)
 
 def main():
