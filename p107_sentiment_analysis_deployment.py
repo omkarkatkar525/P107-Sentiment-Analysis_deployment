@@ -55,11 +55,6 @@ def probability(message):
     f=st.write(f"Probability of Positive Review : {c}")
     return d,e,f
 
-
- 
-   
-    
-
 def main():
     st.title("Sentiment Analysis")
     html_temp = """
@@ -77,9 +72,7 @@ def main():
         result=sentiment_analysis(message)
         st.success(result)
         prob=probability(message)
-            
-        
-      
+           
     if st.button("About"):
         st.text("Built By Omkar Katkar")
         
